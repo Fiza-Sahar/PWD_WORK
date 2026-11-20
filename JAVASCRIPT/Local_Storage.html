@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="email" name="email" id="email" placeholder="email" /> <br /><br />
+    <input type="password" id="password" placeholder="password here" /> <br /><br />
+    <input type="text" placeholder="contact" id="contact" /> <br /><br />
+    <button onclick="login(event)" type="button">LOGIN</button>
+
+    <script>
+        function login(event) {
+            event.preventDefault();
+
+            let username = document.getElementById("email").value.trim();
+            let pass = document.getElementById("password").value.trim();
+            let contact1 = document.getElementById("contact").value.trim();
+
+            if (username === "" || pass === "" || contact1 === "") {
+                alert("Please fill all the fields");
+                return false;
+            }
+
+            let emailpattern = /^[A-Za-z0-9._]+@[a-z]+\.[a-z]{2,3}$/;
+            if (!emailpattern.test(username)) {
+                alert("Incorrect email syntax");
+                return false;
+            }
+
+            let passpattern = /^[A-Za-z0-9!@#$%^&()+-]{8,}$/;
+            if (!passpattern.test(pass)) {
+                alert(
+                    "Password should be at least 8 characters and include letters, digits, and special characters"
+                );
+                return false;
+            }
+
+            let contactpattern = /^03[0-9]{9}$/;
+            if (!contactpattern.test(contact1)) {
+                alert("Contact should be 11 numbers starting with 03");
+                return false;
+            }
+
+            // Save data to localStorage
+            localStorage.setItem("email", username);
+            localStorage.setItem("password", pass);
+            localStorage.setItem("contact", contact1);
+
+            alert("Login successful and data saved locally!");
+
+            return true;
+        }
+
+        // Optional: To auto-fill the form when the page loads using saved data
+        window.onload = function () {
+            if (localStorage.getItem("email")) {
+                document.getElementById("email").value = localStorage.getItem("email");
+            }
+            if (localStorage.getItem("password")) {
+                document.getElementById("password").value = localStorage.getItem("password");
+            }
+            if (localStorage.getItem("contact")) {
+                document.getElementById("contact").value = localStorage.getItem("contact");
+            }
+        };
+    </script>
+</body>
+</html>

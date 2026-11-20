@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web Worker Example</title>
+</head>
+<body>
+  <!-- <h1>Prime Number Generator</h1>
+  <button id="startButton">Start Calculation</button>
+  <div id="result"></div> -->
+
+  <script>
+    // // Create a new Web Worker from the JS file
+    // const worker = new Worker('Worker.js');
+
+    // document.getElementById('startButton').addEventListener('click', () => {
+    //   document.getElementById('result').innerText = 'Calculating...';
+    //   worker.postMessage(100000); // Send the limit to the worker
+    // });
+
+    // // Listen for messages from the worker
+    // worker.onmessage = function(e) {
+    //   document.getElementById('result').innerText = 
+    //     'Primes calculated: ' + e.data.length + '\n' + e.data.slice(0, 10).join(', ') + '...';
+    // };
+
+    // const worker = new Worker('worker.js');
+
+    //     worker.onmessage = function(event) {
+    //         console.log('Factorial result:', event.data);
+    //     };
+
+    //     worker.onerror = function(error) {
+    //         console.log('Error in Worker:', error.message);
+    //     };
+
+    //     worker.postMessage(5); // Send number 5 to worker
+
+//GLOBAL SCOPE
+let globalVar = "I am global";
+
+function show() {
+  console.log(globalVar); // Accessible here
+}
+
+show(); // Output: I am global
+
+
+// Function (Block) Scope
+function greet() {
+  let name = "Ali";
+  console.log("Hello " + name);
+}
+
+greet();         // Output: Hello Ali
+// console.log(name); // Error: name is not defined
+
+
+// Block Scope
+// if (true) {
+//   let age = 25;
+//   console.log(age); // Output: 25
+// }
+
+// console.log(age); // Error: age is not defined
+
+//Spread Operators
+let fruits = ["apple", "banana"];
+let moreFruits = [...fruits, "orange"];
+console.log(moreFruits); // ["apple", "banana", "orange"]
+
+
+//Rest Operators
+function total(...nums) {
+  return nums.reduce((a, b) => a + b, 0);
+}
+
+console.log(total(10, 20, 30)); // 60
+
+
+
+  </script>
+</body>
+</html>

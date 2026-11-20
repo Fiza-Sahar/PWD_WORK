@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS Position Examples</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+      height: 2000px; /* For scroll testing */
+    }
+
+    .box {
+      padding: 15px;
+      margin: 20px;
+      border: 2px solid black;
+    }
+
+    .static-box {
+      position: static;
+      border-color: gray;
+      background: #f9f9f9;
+    }
+
+    .relative-box {
+      position: relative;
+      top: 20px;
+      left: 30px;
+      border-color: blue;
+      background: #e0f7ff;
+    }
+
+    .absolute-container {
+      position: relative; /* Needed for absolute child */
+      height: 200px;
+      border: 2px dashed black;
+      margin-bottom: 100px;
+    }
+
+    .absolute-box {
+      position: absolute;
+      top: 30px;
+      left: 50px;
+      border-color: red;
+      background: #ffe0e0;
+    }
+
+    .fixed-box {
+      position: fixed;
+      bottom: 10px;
+      right: 20px;
+      border-color: green;
+      background: #d0ffd0;
+    }
+
+    .sticky-box {
+      position: sticky;
+      top: 0;
+      border-color: orange;
+      background: #fff8cc;
+    }
+  </style>
+  </head>
+  <body>
+
+    <h2>CSS Position Examples</h2>
+
+    <!-- Static -->
+    <div class="box static-box">
+      <strong>Static Position (Default)</strong><br>
+      This element is in the normal document flow.
+    </div>
+
+    <!-- Relative -->
+    <div class="box relative-box">
+      <strong>Relative Position</strong><br>
+      This element is moved relative to its normal position.
+    </div>
+
+    <!-- Absolute inside a container -->
+    <div class="absolute-container">
+      <div class="box absolute-box">
+        <strong>Absolute Position</strong><br>
+        Positioned relative to the nearest positioned ancestor.
+      </div>
+    </div>
+
+    <!-- Sticky -->
+    <div class="box sticky-box">
+      <strong>Sticky Position</strong><br>
+      Scroll down and see this box stick to the top of the screen.
+    </div>
+
+    <!-- Some extra content to allow scrolling -->
+    <p>Scroll down to see the sticky and fixed boxes in action.</p>
+    <p style="margin-top: 600px;">This content is here to help with
+      scrolling.</p>
+
+    <!-- Fixed -->
+    <div class="box fixed-box">
+      <strong>Fixed Position</strong><br>
+      This element stays at the bottom-right of the screen even when scrolling.
+    </div>
+
+  </body>
+</html>

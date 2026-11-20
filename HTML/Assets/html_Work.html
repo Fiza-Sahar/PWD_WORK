@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+        /* h1{
+            color: green;
+        }
+        p{
+            font-weight: bold;
+        }
+
+        a:hover{
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            font-style: italic;
+        }
+        input:focus{
+           color: rgb(255, 10, 92);
+        }
+
+
+        li:nth-child(even){
+            background-color: aqua;
+        }
+        button:active{
+            background-color: red;
+        } */
+
+      /* p:nth-child(3){
+        color: green;
+      } */
+      /* p:not(.special){
+        color: green;
+      } */
+
+      p::first-line{
+        color: red;
+        font-size: 20px;
+        font-weight: bold;
+        font-style: italic;
+      }
+      h1::before{
+        content: "😬 ";
+      }
+      .text-shadow{
+        font-size: 20px;
+        color: red;
+        text-shadow: 2px 2px 5px rgb(187, 71, 71);
+      }
+    </style>
+    </head>
+    <body>
+        <h1>Pseudo Elements</h1>
+        
+        <!-- <a href="https://www.w3schools.com/">w3schools</a><br><br>
+        <input type="text" placeholder="click to focus">
+
+        <ul>
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Orange</li>
+            <li>Grapes</li>
+            <li>Mango</li>
+        </ul>
+        <button>Click Me</button>
+
+        
+
+            <p class="special">Paragraph_01</p>
+            <p>Paragraph_02</p>
+            <p class="special_2">Paragraph_03</p>
+            <p>Paragraph_04</p>
+            <p>Paragraph_05</p> -->
+
+            <p>This is Paragraph. <br>
+                this is paragraph 2 <br>
+                this is paragraph line3
+            </p>
+            <h1>Class</h1>
+            <div class="text-shadow">Shadow effect</div>
+    </body>
+</html>

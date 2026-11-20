@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS Concepts: Box Model, Position, Float, Display</title>
+    <style>
+    .box-model {
+      margin: 20px;
+      padding: 10px;
+      border: 2px solid black;
+    }
+
+    .Static-box{
+      position: static;
+      top: 20px;
+      left: 30px;
+      background-color: rgb(171, 171, 62);
+      padding: 10px;
+    }
+
+    .relative-box {
+      position: relative;
+      top: 20px;
+      left: 30px;
+      background-color: lightyellow;
+      padding: 10px;
+    }
+
+    .absolute-parent {
+      position: relative;
+      height: 200px;
+      width: 200px;
+      border: 1px solid black;
+      margin-bottom: 20px;
+    }
+
+    .absolute-child {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: yellow;
+      padding: 20px;
+    }
+
+    .fixed-box {
+      position: fixed;
+    top: 0;
+      right: 0;
+      background-color: rgb(0, 255, 4);
+      color: rgb(8, 7, 7);
+      padding: 20px;
+    }
+
+    .float-image {
+      float: inherit;
+      margin-right: 10px;
+      width: 200px;
+      height: 200px;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .left-float {
+      float: left;
+      width: 100px;
+      background-color: lightblue;
+      padding: 5px;
+    }
+
+    .right-float {
+      float: right;
+      width: 100px;
+      background-color: lightgreen;
+      padding: 5px;
+    }
+
+    .block-example {
+      display: block;
+      background-color: lightgray;
+      margin: 10px 0;
+      padding: 10px;
+    }
+
+    .inline-example {
+      display: inline;
+      background-color: yellow;
+      padding: 5px;
+    }
+
+    .inline-block-example {
+      display: inline-block;
+      width: 150px;
+      background-color: pink;
+      padding: 10px;
+      margin: 5px;
+    }
+  </style>
+  </head>
+  <body>
+
+    <h2>1. CSS Box Model</h2>
+    <div class="box-model">
+      Hello, I am a box!
+    </div>
+
+    <h2>2. CSS Positioning</h2>
+
+    <h3>A. Static (default)</h3>
+    <div class="Static-box">
+      I am static (default position)
+    </div>
+
+    <h3>B. Relative</h3>
+    <div class="relative-box">
+      I moved 20px down and 30px to the right
+    </div>
+
+    <h3>C. Absolute</h3>
+    <div class="absolute-parent">
+      Parent Box
+      <div class="absolute-child">
+        I’m absolute (inside relative parent)
+      </div>
+    </div>
+
+    <h3>D. Fixed</h3>
+    <div class="fixed-box">
+      I stay at the bottom right always!
+    </div>
+
+    <h2>3. Float</h2>
+
+    <h3>A. Float Left Example</h3>
+    <img src="./Assets/images/Food.jpg" class="float-image">
+    <p>This text wraps around the floated image. The image is floated to the
+      left side.lorem
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis veniam
+      autem ex saepe et ad optio debitis incidunt corrupti iusto error explicabo
+      voluptatum, ipsa molestiae quidem fugit. Suscipit recusandae adipisci sint
+      culpa vel perferendis in temporibus explicabo quos itaque aperiam, quia
+      placeat quam cumque quisquam. Qui blanditiis odit expedita ipsum
+      repudiandae aut fugit? Repellat dolor quasi aliquid ratione voluptates
+      facilis tempore consequuntur consectetur dicta animi quas deleniti eius,
+      fugit minima id rerum ut vero cumque vel. Quam earum perspiciatis
+      similique sint nesciunt illum, dolor vel! Qui porro voluptates aliquam ut
+      autem id illum adipisci quo maiores velit quis iure earum, corrupti
+      commodi inventore hic debitis quidem dolorem! Consectetur error dolorum
+      quam similique in vitae, cum rerum accusamus voluptate et, officiis est,
+      nisi deserunt ex nostrum consequatur dolore maiores sint laboriosam
+      recusandae quia? Rem sit quaerat cupiditate consectetur ipsum iusto ex,
+      laborum dolor placeat totam, assumenda enim officiis nihil laudantium
+      animi deleniti eum magni. Non fuga nam error quae recusandae optio odio id
+      aut sunt modi! Veniam, officia suscipit quia, aliquam doloribus ullam
+      incidunt eius excepturi temporibus, quas recusandae iure provident error.
+      Corrupti vitae atque magni, itaque molestias doloribus deleniti iste neque
+      ullam eveniet beatae iusto voluptate repellendus dignissimos eaque maiores
+      accusantium natus incidunt. Cumque amet vero labore reiciendis, iste non
+      adipisci necessitatibus atque obcaecati eum similique pariatur, fuga rem
+      ipsa quas laboriosam esse odit. Perspiciatis eveniet cumque aut voluptate,
+      corrupti vitae eligendi magnam cupiditate expedita harum id incidunt
+      praesentium quos reiciendis laborum, quasi eius voluptatum esse. Culpa
+      dignissimos fugiat facilis cupiditate, nulla natus neque explicabo velit
+      ipsam earum aperiam, ea cumque exercitationem consequuntur dolore
+      quibusdam quisquam illum, dolorum veritatis. Porro sapiente, recusandae at
+      rem, debitis nulla quidem voluptate ipsum aliquam placeat eligendi natus
+      amet dignissimos, adipisci ab. Corrupti quasi blanditiis odio cupiditate
+      quas, debitis dicta asperiores odit laborum, dolorum sequi? Dolor, laborum
+      repellat explicabo, nihil adipisci rerum assumenda dolorum hic earum
+      incidunt perferendis, quasi ipsum quas! A nostrum quae aperiam nihil, modi
+      sed facilis earum officia ut sunt beatae reprehenderit impedit voluptas ab
+      maiores iste at atque numquam quisquam voluptatem, iusto vel architecto.
+      Cum dolorem dolores possimus explicabo repellat velit voluptatem
+      cupiditate commodi veritatis ipsa corrupti alias, officia incidunt tempora
+      libero perspiciatis veniam natus laudantium distinctio illum nemo
+      consequuntur voluptatum cumque inventore! Fugit amet quis ea dolorum
+      architecto assumenda quisquam nemo corporis, aliquid non numquam dolores,
+      totam voluptatem molestiae! Hic, rem. Laudantium nesciunt minima
+      perspiciatis a? Architecto officiis pariatur repellendus.</p>
+    <!-- <h3>B. Clearfix Example</h3>
+  <div class="clearfix">
+    <div class="left-float">Left box</div>
+    <div class="right-float">Right box</div>
+  </div>
+
+  <h2>4. Display Property</h2>
+
+  <h3>A. Block</h3>
+  <div class="block-example">I am a block element</div>
+
+  <h3>B. Inline</h3>
+  <span class="inline-example">Inline 1</span>
+  <span class="inline-example">Inline 2</span>
+
+  <h3>C. Inline-Block</h3>
+  <div class="inline-block-example">Inline Block 1</div>
+  <div class="inline-block-example">Inline Block 2</div> -->
+
+  </body>
+</html>

@@ -1,0 +1,9 @@
+GitHub Copilot
+CodeGPT
+Tabnine AI Autocomplete
+Live Server	
+Prettier
+HTML to CSS autocompletion
+HTML/CSS/JavaScript Snippets
+Claude 4, DeepSeek R1, ChatGPT, Copilot, Cursor AI and Cline,
+BLACKBOXAI #1 AI Coding Agent and Coding Copilot

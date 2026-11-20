@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module Example</title>
+</head>
+<body>
+
+    <script>
+
+
+        // IIFE (Immediately Invoked Function Expression)
+
+        (function() {
+            console.log("I run immediately!");
+        })();
+
+    console.log("Start");
+
+    setTimeout(() => {
+        console.log("setTimeout Callback");
+    }, 0);
+
+    Promise.resolve().then(() => {
+        console.log("Promise Resolved");
+    });
+
+    console.log("End");
+
+// Higher Order Function
+function sayHello(name) {
+  return `Hello, ${name}`;
+}
+
+function greet(callback, userName) {
+  console.log(callback(userName));
+}
+
+greet(sayHello, "John"); // Hello, John
+
+
+
+    </script>
+  <script type="module" src="Main.js"></script>
+</body>
+</html>

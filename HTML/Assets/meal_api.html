@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meal Finder</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 420px;
+      text-align: center;
+    }
+
+    input {
+      padding: 10px;
+      width: 70%;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #e74c3c;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>🔍 Search Meal</h2>
+  <input type="text" id="mealInput" placeholder="Enter meal name...">
+  <button id="searchBtn">Search</button>
+
+  <p id="mealName"></p>
+  <p id="mealInstructions"></p>
+  <img id="mealImage" src="" alt="" />
+  <a id="mealVideo" href="#" target="_blank"></a>
+</div>
+
+<script>
+  const searchBtn = document.getElementById("searchBtn");
+  const mealInput = document.getElementById("mealInput");
+  const mealName = document.getElementById("mealName");
+  const mealInstructions = document.getElementById("mealInstructions");
+  const mealImage = document.getElementById("mealImage");
+  const mealVideo = document.getElementById("mealVideo");
+
+  searchBtn.addEventListener("click", async () => {
+    const mealNameValue = mealInput.value.trim();
+
+    if (mealNameValue === "") {
+      alert("Please enter a meal name!");
+      return;
+    }
+
+    try {
+      const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealNameValue}`);
+      const data = await response.json();
+
+      if (!data.meals) {
+        mealName.innerText = "Meal not found!";
+        mealInstructions.innerText = "";
+        mealImage.src = "";
+        mealVideo.innerText = "";
+        mealVideo.href = "#";
+        return;
+      }
+
+      const meal = data.meals[0];
+
+      mealName.innerText = `🍽️ Meal: ${meal.strMeal}`;
+      mealInstructions.innerText = `📋 Instructions: ${meal.strInstructions.slice(0, 300)}...`;
+      mealImage.src = meal.strMealThumb;
+      mealVideo.href = meal.strYoutube;
+      mealVideo.innerText = "▶️ Watch on YouTube";
+
+    } catch (error) {
+      console.error("Error fetching meal:", error);
+    }
+  });
+</script>
+
+</body>
+</html>

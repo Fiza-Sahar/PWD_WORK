@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+
+<body>
+
+   <input type="email" name="email" id="email" placeholder="email"> <br><br>
+   <input type="password" id="password" placeholder="password here"> <br><br>
+   <input type="text" placeholder="contact" id="contact"><br><br>
+   <button onclick="login(event)" type="button">LOGIN</button>
+   <script>
+      function login(event) {
+         let username = document.getElementById('email').value;
+         let pass = document.getElementById('password').value;
+         let contact1 = document.getElementById('contact').value;
+         event.preventDefault();
+         if (username == "" || pass == "" || contact1 == "") {
+            alert("Please fill all the fields");
+            return false;
+         }
+         let emailpattern = /[A-Za-z0-9\._]+@[a-z]+\.[a-z]{2,3}/;
+         if (!emailpattern.test(username)) {
+            alert("inncorect email syntax");
+            return false;
+         }
+         let passpattern = /^[A-Za-z0-9!@#$%^&()+-]{8,}$/;
+         if (!passpattern.test(pass)) {
+            alert("password should include 8 digits having special character, smaal, capital , digits");
+            return false;
+         }
+         let contactpattern = /03[0-9]{9}/;
+         if (!contactpattern.test(contact1)) {
+            alert("Should be 11 numbers and having 03 in start");
+            return false;
+         }
+         else {
+            alert("login successfully");
+            return true;
+         }
+      }
+
+   </script>
+</body>
+
+</html>

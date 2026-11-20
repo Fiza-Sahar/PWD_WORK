@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Form with Input Types</title>
+</head>
+<body>
+
+    <h1>Basic HTML Form</h1>
+    
+    <form  action="/submit" method="POST">
+        <!-- Text Input -->
+        <label for="text">Full Name:</label>
+        <input type="text" id="text" name="fullname" placeholder="Enter your full name" autofocus required>
+        <br><br>
+
+        <!-- Email Input -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <br><br>
+
+        <!-- Password Input -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        <br><br>
+
+        <!-- Number Input -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="18" max="100" placeholder="Enter your age">
+        <br><br>
+
+        <!-- Radio Buttons -->
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <br><br>
+
+        <!-- Checkbox -->
+        <label for="subscribe">Subscribe to newsletter:</label>
+        <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+        <br><br>
+
+        <!-- Date Input -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+        <br><br>
+
+        <!-- Time Input -->
+        <label for="appt">Preferred Time:</label>
+        <input type="time" id="appt" name="appt">
+        <br><br>
+
+        <!-- URL Input -->
+        <label for="website">Website URL:</label>
+        <input type="url" id="website" name="website" placeholder="Enter your website URL">
+        <br><br>
+
+        <!-- Tel Input -->
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+        <br><br>
+
+        <!-- Color Input -->
+        <label for="favcolor">Favorite Color:</label>
+        <input type="color" id="favcolor" name="favcolor">
+        <br><br>
+        <label for="month">Select a Month:</label>
+        <input type="month" id="month" name="month">
+
+
+        <br><br>
+
+        <!-- Week Input -->
+        <label for="week">Select a Week:</label>
+        <input type="week" id="week" name="week">
+        <br><br>
+
+        <!-- Search Input -->
+        <label for="search">Search:</label>
+        <input type="search" id="search" name="search" placeholder="Search for something...">
+        <br><br>
+        <!-- Submit Button -->
+        <button type="submit">Submit</button><br><br>
+
+        <textarea name="comment" rows="4" cols="50">
+            Enter your comment here...
+      </textarea><br><br>
+     
+
+      <select name="fruits">
+        <option value="apple">Apple</option>
+        <option value="banana">Banana</option>
+        <option value="cherry">Cherry</option>
+  </select>
+
+  <input type="text" pattern="[a-zA-Z0-9]+">
+
+
+  <form action="/action_page.php">
+
+    <fieldset>
+      <legend>Student Information</legend>
+      <label for="name">First name:</label><br>
+      <input type="text" id="fname" name="fname"  placeholder="Enter your First Name"><br>
+      <label for="name">Last name:</label><br>
+      <input type="text" id="lname" name="lname"  placeholder="Enter your last name"><br><br>
+      <input type="submit" value="Submit">
+    </fieldset>
+  </form>
+
+    </form>
+
+    
+
+</body>
+</html>
